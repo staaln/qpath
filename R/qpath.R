@@ -13,7 +13,7 @@ qpath<-function(data, allgenes, syms, pathwaynames, normals = NULL, ranks = NULL
 		print(i)
 		a<-unlist(PDS$scores[[i]])
 		m<-which.min(a)
-		qpathscores[[i]]<-as.matrix(dist(PDS$curves[[i]][,PDS$compin[[i]]]))[m,]/max(as.matrix(dist(PDS$curves[[i]][,PDS$compin[[i]]]))[m,])
+		qpathscores[[i]]<-as.matrix(dist(PDS$curves[[i]]))[m,]/max(as.matrix(dist(PDS$curves[[i]]))[m,])
 	}	
 	names(qpathscores)<-pathwaynames
 	list(qpathscores=qpathscores,PDS=PDS)
